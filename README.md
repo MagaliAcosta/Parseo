@@ -1,28 +1,136 @@
 # Parseo - Lenguaje: Gestor de tareas  
 
 ## Objetivo  
-Automatizar la gestión de una lista de tareas pendientes, pudiendo elegir quién la realiza y en qué orden, según prioridad  
+Orientado a la representación de rutinas y acciones cotidianas 
 
 ## Alcance
-- Crear tareas
-- Modificar el estado de las tareas (pendiente, progreso, completada)
-- Asignar responsable
-- Listar tareas
-- Asignar prioridad (alta, media, baja)
+#### Permite
+- Definir rutinas principales
+- Declarar y asignar variables simples
+- Ejecutar acciones simbólicas
+- Mostrar información en pantalla
+- Utilizar estructuras condicionales
+#### Limitaciones
+- No maneja estructuras de datos coplejas
+- No posee POO
+- No tiene manejo avanzadod de tipos
 
 ## Especificaciones léxicas
-- tareaN, usuarioX, asignar, cambiarEstado, cambiarPrioridad, listar, crear, alta, media, baja, pendiente, progreso, completada
+#### Palabras reservadas 
+- rutina, inicio, fin, hacer, mostrar, si, sino, definir, como, accion
+#### Identificadores
+- Secuencia de letras y números
+- Deben comenzar con una letra en minúscula
+#### Constantes
+- Números enteros
+- Strings
+- Booleanos
+#### Operadores
+> ==, !=, <, >, <=, >=
+#### Símbolos especiales
+> { } ( ) ;
 
 ## Especificaciones sintácticas
-- crear(tareaN)
-- asignar(tareaN, usuarioX)
-- cambiarEstado(tareaN, nuevoEstado)
-- cambiarPrioridad(tareaN, nivel)
-- listar()
+#### General
+Todo programa debe comenzar con la palabra ``rutina``, seguida de un nombre y contener un bloque de ``inicio`` y ``fin``
+  Ejemplo
+  ```
+  rutina nombreRutina inicio
+      instrucciones
+  fin
+  ```
+#### Sentencias
+Un programa está compuesto por una secuencia de sentencias. Cada sentencia representa una acción o instrucción.  
+Las sentencias pueden ser:
+- asignaciones
+- acciones
+- condicionales
+  #### Asignación de variables
+  Se utiliza la palabra ``definir``, seguida del nombre de la variable, la palabra ``como`` y un valor.  
+  Ejemplo
+  ```
+    definir x como 5;
+    definir dia como "lunes";
+  ```
+  ##### Acciones
+  Se pueden definir acciones propias dentro del programa utilizando la palabra ``accion``, seguida de un nombre y un bloque de instrucciones
+  - Creación
+    ```
+      accion nombreAccion {
+          sentencia | sentencias
+      }
+    ```
+  - Uso: Las acciones se ejecutan mediante la palabra ``hacer``, seguida del nombre de la acción.
+    ```
+     hacer nombreAccion;
+    ```
+  ##### Condicionales
+  Estructura:
+  ```
+    si condicion {
+        sentencia | sentencias
+    } sino {
+        sentencia | sentencias
+    }
+  ```
+  ##### Condicion
+  Permiten hacer comparaciones entre valores con los operadores
 
 ## Especificaciones semánticas:
-- crear(tareaN): genera una nueva tarea con el estado PENDIENTE, prioridad sin definir y responsable sin asignar; validarTarea: no debe haber tareas con el mismo nombre
-- asignar(tareaN, usuarioX): asigna un responsable a la tarea, si ya tiene responsable lo reemplaza; validarQueExistaUsuario; validarQueExistaTarea
-- cambiarEstado(tareaN, nuevoEstado): modifica el estado de la tarea; validarQueExistaTarea; validarEstado: debe ser pendiente, progreso, completada. No permite pasar de pendiente a completada directamente.
-- cambiarPrioridad(tareaN, nivel): modifica la prioridad de la tarea; validarQueExistaTarea; validarPrioridad: debe ser alta, media o baja.
-- listar(): muestra todas las tareas con nombre, estado, prioridad y responsable.
+- ``rutina`` define el programa principal
+- las variables pueden ser reutilizadas y modificadas, deben declararse ante de utilizarse
+- ``hacer accion;`` no retorna valores
+- ``mostrar("texto")`` imprime mensaje en pantalla
+- ``si condicion {...}`` evalúa una condición lógica si es verdadera, ejecutan el bloque correspondiente
+
+
+## EJEMPLOS
+```
+rutina ejemploVariable inicio
+
+definir nombre como "Magali";
+mostrar("Bienvenida");
+mostrar(nombre);
+
+fin
+```
+
+```
+rutina energia inicio
+
+definir energia como 5;
+
+si (energia > 3) {
+    mostrar("Puedo estudiar");
+} sino {
+    mostrar("Mejor descansar");
+}
+
+fin
+```
+
+```
+rutina rutinaDiaria inicio
+
+definir dia como "lunes";
+definir energia como 2;
+
+mostrar("Inicio del día");
+
+si (dia == "lunes") {
+    mostrar("Hoy hay obligaciones");
+
+    si (energia > 3) {
+        hacer estudiar;
+    } sino {
+        mostrar("Poca energía");
+    }
+
+} sino {
+    mostrar("Día tranquilo");
+}
+
+mostrar("Fin del día");
+
+fin
+```
