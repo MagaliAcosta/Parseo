@@ -79,7 +79,7 @@ Las sentencias pueden ser:
 ## Especificaciones semánticas:
 - ``rutina`` define el programa principal
 - las variables pueden ser reutilizadas y modificadas, deben declararse ante de utilizarse
-- ``hacer accion;`` no retorna valores
+- Una acción definida por el usuario contiene un bloque de instrucciones que se ejecuta cuando se la invoca con ``hacer`` 
 - ``mostrar("texto")`` imprime mensaje en pantalla
 - ``si condicion {...}`` evalúa una condición lógica si es verdadera, ejecutan el bloque correspondiente
 
@@ -104,6 +104,28 @@ si (energia > 3) {
     mostrar("Puedo estudiar");
 } sino {
     mostrar("Mejor descansar");
+}
+
+fin
+```
+
+```
+rutina acciones inicio
+
+accion estudiar {
+    mostrar("Estudiando...");
+}
+
+accion descansar {
+    mostrar("Descansando...");
+}
+
+definir energia como 2;
+
+si (energia > 3) {
+    hacer estudiar;
+} sino {
+    hacer descansar;
 }
 
 fin
