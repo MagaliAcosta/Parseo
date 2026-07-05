@@ -29,6 +29,7 @@ Números enteros
 ## Especificaciones sintácticas
 `<Biletera> := inicio <ListaSen> fin`  
 `<ListaSen> := <Sentecia> <ListaSen>`  
+`<ListaSen> := <Sentecia>`  
 `<Sentecia> := ID = NUM ;`  
 `<Sentecia> := gasto ID NUM ;`  
 `<Sentecia> := ingreso ID NUM ;`  
