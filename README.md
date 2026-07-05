@@ -27,7 +27,7 @@ Números enteros
 ---
 
 ## Especificaciones sintácticas
-`<Biletera> := inicio <ListaSen> fin`  
+`<Programa> := inicio <ListaSen> fin`  
 `<ListaSen> := <Sentecia> <ListaSen>`  
 `<ListaSen> := <Sentecia>`  
 `<Sentecia> := ID = NUM ;`  
