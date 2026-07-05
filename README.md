@@ -3,32 +3,28 @@
 ## Objetivo  
 Orientado a la representación de rutinas y acciones cotidianas 
 
+---
+
 ## Alcance
-#### Permite
-- Definir rutinas principales
-- Declarar y asignar variables simples
-- Ejecutar acciones simbólicas
-- Mostrar información en pantalla
-- Utilizar estructuras condicionales
-#### Limitaciones
-- No maneja estructuras de datos coplejas
-- No posee POO
-- No tiene manejo avanzadod de tipos
+- Registrar gastos e ingresos
+- Permite el uso de variables para representar distintas cuentas/billeteras
+- Implementa una única estructura condicional simple
+
+---
 
 ## Especificaciones léxicas
 #### Palabras reservadas 
-- rutina, inicio, fin, hacer, mostrar, si, sino, definir, como, accion
+`inicio`, `fin`, `gasto`, `ingreso`, `si`, `finsi`
 #### Identificadores
-- Secuencia de letras y números
-- Deben comenzar con una letra en minúscula
+Deben contener exclusivamente letras minúsculas y tener una longitud máxima estricta de 4 caracteres.
 #### Constantes
-- Números enteros
-- Strings
-- Booleanos
+Números enteros
 #### Operadores
-> ==, !=, <, >, <=, >=
+`=`, `>`
 #### Símbolos especiales
-> { } ( ) ;
+`;`
+
+---
 
 ## Especificaciones sintácticas
 #### General
