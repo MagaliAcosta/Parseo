@@ -16,7 +16,7 @@ Orientado a la representación de rutinas y acciones cotidianas
 #### Palabras reservadas 
 `inicio`, `fin`, `gasto`, `ingreso`, `si`, `finsi`
 #### Identificadores
-Deben contener exclusivamente letras minúsculas y tener una longitud máxima estricta de 4 caracteres.
+Deben contener exclusivamente letras minúsculas y tener una longitud máxima estricta de 5 caracteres.
 #### Constantes
 Números enteros
 #### Operadores
@@ -45,5 +45,12 @@ Números enteros
 
 ---
 
-## Código
+## Código + pruebas
+> https://colab.research.google.com/drive/1N0SVDRS1Vms5kWaopAwHopGdTwXe9x4s?usp=sharing
+
+---
+
+## Conclusión
+Al empezar al hacer el lenguaje estuve en blanco, no sabía si lo que hacía estaba bien. Cuando el profe lo vio estaba realizando un programa más que un lenguaje. A partir de ahí cambié todo el lenguaje. Me ayudó mucho haber cursado en paralelo características de los leguajes de programación y el primer parcial de Parseo, para terminar de entender lo que debía hacer.
+Fue un gran desafío.
 
