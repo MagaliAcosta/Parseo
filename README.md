@@ -27,128 +27,22 @@ Números enteros
 ---
 
 ## Especificaciones sintácticas
-#### General
-Todo programa debe comenzar con la palabra ``rutina``, seguida de un nombre y contener un bloque de ``inicio`` y ``fin``
-  Ejemplo
-  ```
-  rutina nombreRutina inicio
-      instrucciones
-  fin
-  ```
-#### Sentencias
-Un programa está compuesto por una secuencia de sentencias. Cada sentencia representa una acción o instrucción.  
-Las sentencias pueden ser:
-- asignaciones
-- acciones
-- condicionales
-  #### Asignación de variables
-  Se utiliza la palabra ``definir``, seguida del nombre de la variable, la palabra ``como`` y un valor.  
-  Ejemplo
-  ```
-    definir x como 5;
-    definir dia como "lunes";
-  ```
-  ##### Acciones
-  Se pueden definir acciones propias dentro del programa utilizando la palabra ``accion``, seguida de un nombre y un bloque de instrucciones
-  - Creación
-    ```
-      accion nombreAccion {
-          sentencia | sentencias
-      }
-    ```
-  - Uso: Las acciones se ejecutan mediante la palabra ``hacer``, seguida del nombre de la acción.
-    ```
-     hacer nombreAccion;
-    ```
-  ##### Condicionales
-  Estructura:
-  ```
-    si condicion {
-        sentencia | sentencias
-    } sino {
-        sentencia | sentencias
-    }
-  ```
-  ##### Condicion
-  Permiten hacer comparaciones entre valores con los operadores
+`<Biletera> := inicio <ListaSen> fin`  
+`<ListaSen> := <Sentecia> <ListaSen>`  
+`<Sentecia> := ID = NUM ;`  
+`<Sentecia> := gasto ID NUM ;`  
+`<Sentecia> := ingreso ID NUM ;`  
+`<Sentecia> := si ID > NUM <ListaSen> finsi ;`
+
+---
 
 ## Especificaciones semánticas:
-- ``rutina`` define el programa principal
-- las variables pueden ser reutilizadas y modificadas, deben declararse ante de utilizarse
-- Una acción definida por el usuario contiene un bloque de instrucciones que se ejecuta cuando se la invoca con ``hacer`` 
-- ``mostrar("texto")`` imprime mensaje en pantalla
-- ``si condicion {...}`` evalúa una condición lógica si es verdadera, ejecutan el bloque correspondiente
+- Al utilizar `gasto`, `ingreso` o `si`, verifica que el ID exista.
+- `ID = NUM;` crea una cuenta nueva o actualiza el saldo del identificador
+- La estructura condicional evalúa exclusivamente si el saldo actual de una cuenta es estrictamente mayor a una constante numérica.
+- El `gasto` de un identificador no debe ser mayor al monto del mismo.
 
+---
 
-## EJEMPLOS
-```
-rutina ejemploVariable inicio
+## Código
 
-definir nombre como "Magali";
-mostrar("Bienvenida");
-mostrar(nombre);
-
-fin
-```
-
-```
-rutina energia inicio
-
-definir energia como 5;
-
-si (energia > 3) {
-    mostrar("Puedo estudiar");
-} sino {
-    mostrar("Mejor descansar");
-}
-
-fin
-```
-
-```
-rutina acciones inicio
-
-accion estudiar {
-    mostrar("Estudiando...");
-}
-
-accion descansar {
-    mostrar("Descansando...");
-}
-
-definir energia como 2;
-
-si (energia > 3) {
-    hacer estudiar;
-} sino {
-    hacer descansar;
-}
-
-fin
-```
-
-```
-rutina rutinaDiaria inicio
-
-definir dia como "lunes";
-definir energia como 2;
-
-mostrar("Inicio del día");
-
-si (dia == "lunes") {
-    mostrar("Hoy hay obligaciones");
-
-    si (energia > 3) {
-        hacer estudiar;
-    } sino {
-        mostrar("Poca energía");
-    }
-
-} sino {
-    mostrar("Día tranquilo");
-}
-
-mostrar("Fin del día");
-
-fin
-```
