@@ -1,7 +1,7 @@
-# Parseo - Lenguaje: Gestor de tareas  
+# Parseo - Lenguaje: Bolsillo
 
 ## Objetivo  
-Orientado a la representación de rutinas y acciones cotidianas 
+Orientado a la representación de gastos e ingresos simulando distintas billeteras o cuentas
 
 ---
 
